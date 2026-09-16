@@ -1396,7 +1396,7 @@ input:checked + .slider:before {
   transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 340px) {
   .modal-backdrop {
     align-items: center;
     padding: 20px;
