@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="description" content="myFinance - Controle Financeiro Pessoal moderno, responsivo e em tempo real.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="myFinance">
+
+  <title>myFinance — Controle Financeiro Pessoal</title>
+
+  <!-- PWA Manifest & Favicons -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- Sidebar Desktop Navigation -->
+    <aside class="desktop-sidebar">
+      <div class="brand-header">
+        <div class="brand-logo-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="2" y="5" width="20" height="14" rx="3" stroke-width="2" />
+            <line x1="2" y1="10" x2="22" y2="10" stroke-width="2" />
+            <circle cx="6" cy="15" r="1.5" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>myFinance</h1>
+          <p>Controle Financeiro</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-link active" data-view="view-dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          <span>Início</span>
+        </a>
+        <a href="#cards" class="nav-link" data-view="view-cards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="1" y="4" width="22" height="16" rx="3" stroke-width="2" />
+            <line x1="1" y1="10" x2="23" y2="10" stroke-width="2" />
+          </svg>
+          <span>Meus Cartões</span>
+        </a>
+        <a href="#transactions" class="nav-link" data-view="view-transactions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="8" y1="6" x2="21" y2="6" stroke-width="2" />
+            <line x1="8" y1="12" x2="21" y2="12" stroke-width="2" />
+            <line x1="8" y1="18" x2="21" y2="18" stroke-width="2" />
+            <line x1="3" y1="6" x2="3.01" y2="6" stroke-width="2" />
+            <line x1="3" y1="12" x2="3.01" y2="12" stroke-width="2" />
+            <line x1="3" y1="18" x2="3.01" y2="18" stroke-width="2" />
+          </svg>
+          <span>Movimentações</span>
+        </a>
+        <a href="#reports" class="nav-link" data-view="view-reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="20" x2="18" y2="10" stroke-width="2" />
+            <line x1="12" y1="20" x2="12" y2="4" stroke-width="2" />
+            <line x1="6" y1="20" x2="6" y2="14" stroke-width="2" />
+          </svg>
+          <span>Relatórios</span>
+        </a>
+        <a href="#settings" class="nav-link" data-view="view-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3" stroke-width="2" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+          <span>Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="btnSidebarNewExpense" class="btn-sidebar-quick">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="12" y1="5" x2="12" y2="19" stroke-width="2.5" />
+            <line x1="5" y1="12" x2="19" y2="12" stroke-width="2.5" />
+          </svg>
+          <span>+ Novo Lançamento</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Viewport -->
+    <main class="main-viewport">
+
+      <!-- Sticky Header with Month Navigator & Actions -->
+      <header class="app-header">
+        <div class="header-user-greeting">
+          <div class="avatar-badge">F</div>
+          <div class="user-text">
+            <h2>Olá 👋</h2>
+          </div>
+        </div>
+
+        <!-- Month Navigation Bar -->
+        <div class="month-navigator">
+          <button id="btnPrevMonth" class="month-nav-btn" title="Mês anterior" aria-label="Mês anterior">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div class="month-display">
+            <span id="currentMonthName" class="current-month-name">SETEMBRO 2026</span>
+            <span id="currentMonthPeriod" class="month-period-dates">01/09 → 30/09</span>
+          </div>
+
+          <button id="btnNextMonth" class="month-nav-btn" title="Próximo mês" aria-label="Próximo mês">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Header Controls -->
+        <div class="header-actions">
+          <button id="btnResetMonth" class="btn-icon-round" title="Ir para o mês atual" aria-label="Mês atual">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </button>
+
+          <button id="btnThemeToggle" class="btn-icon-round" title="Alternar tema" aria-label="Tema escuro/claro">
+            <svg id="iconThemeSun" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg id="iconThemeMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <button id="btnPwaInstall" class="btn-icon-round" style="display:none;" title="Instalar aplicativo"
+            aria-label="Instalar PWA">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Views Wrapper -->
+      <div class="content-container">
+
+        <!-- ============================================================== -->
+        <!-- VIEW 1: DASHBOARD                                             -->
+        <!-- ============================================================== -->
+        <section id="view-dashboard" class="view-section active-view">
+
+          <!-- Primary Metric Summary Cards -->
+          <div class="metrics-grid">
+
+            <!-- Saldo Disponível (Total Livre) -->
+            <div class="metric-card highlight-card">
+              <div>
+                <div class="metric-title">Saldo Disponível</div>
+                <div id="metricTotalAvailable" class="metric-value">R$ 0,00</div>
+                <div class="metric-subtext">Limite livre total</div>
+              </div>
+              <div class="metric-badge badge-info" style="background: rgba(255,255,255,0.2); color:#fff;">
+                <span>Disponível p/ uso</span>
+              </div>
+            </div>
+
+            <!-- Entradas do Mês -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-header-left">
+                  <div class="metric-icon-wrap"
+                    style="background: var(--color-success-light); color: var(--color-success);">
+                    ↓
+                  </div>
+                  <span class="metric-title">Entradas</span>
+                </div>
+              </div>
+              <span id="metricIncomeCount" class="metric-badge badge-success">0 lançamentos</span>
+              <div id="metricTotalIncome" class="metric-value" style="color: var(--color-success);">R$ 0,00</div>
+              <div class="metric-subtext">Receitas do mês selecionado</div>
+            </div>
+
+            <!-- Gastos do Mês -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-header-left">
+                  <div class="metric-icon-wrap"
+                    style="background: var(--color-danger-light); color: var(--color-danger);">
+                    ↑
+                  </div>
+                  <span class="metric-title">Gastos</span>
+                </div>
+              </div>
+                              <span id="metricExpenseCount" class="metric-badge badge-danger">0 lançamentos</span>
+              <div id="metricTotalExpense" class="metric-value" style="color: var(--color-danger);">R$ 0,00</div>
+              <div class="metric-subtext">Despesas registradas no mês</div>
+            </div>
+
+            <!-- Economia do Mês -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-header-left">
+                  <div class="metric-icon-wrap"
+                    style="background: var(--color-primary-light); color: var(--color-primary);">
+                    💰
+                  </div>
+                  <span class="metric-title">Economia</span>
+                </div>
+              </div>
+              <span id="metricSavingsPct" class="metric-badge badge-info">0%</span>
+              <div id="metricTotalSavings" class="metric-value">R$ 0,00</div>
+              <div id="metricSavingsSubtext" class="metric-subtext">Sobrou das receitas</div>
+            </div>
+
+            <!-- Uso dos Cartões -->
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-header-left">
+                  <div class="metric-icon-wrap"
+                    style="background: var(--color-warning-light); color: var(--color-warning);">
+                    💳
+                  </div>
+                  <span class="metric-title">Uso de Limite</span>
+                </div>
+              </div>
+              <span id="metricCreditUsagePct" class="metric-badge badge-warning">0%</span>
+              <div id="metricCreditUsageVal" class="metric-value">R$ 0,00</div>
+              <div id="metricTotalCreditLimit" class="metric-subtext">de R$ 0,00 limite total</div>
+            </div>
+
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="quick-action-bar">
+            <button id="btnQuickNewExpense" class="btn-action-big btn-expense-main">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <span>+ Novo Gasto</span>
+            </button>
+            <button id="btnQuickNewIncome" class="btn-action-big btn-income-main">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <span>+ Nova Entrada</span>
+            </button>
+          </div>
+
+          <!-- MEUS CARTÕES - RESUMO RÁPIDO -->
+          <div class="section-header">
+            <h3 class="section-title">
+              <span>💳</span> Meus Cartões
+            </h3>
+            <span class="section-link" data-view="view-cards">Gerenciar Cartões →</span>
+          </div>
+
+          <div id="dashboardCardsSlider" class="cards-slider-container">
+            <!-- Renderizado dinamicamente pelo JavaScript -->
+          </div>
+
+          <!-- EVOLUÇÃO DOS GASTOS DURANTE O MÊS (Gráfico SVG) -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title-group">
+                <h3>📈 Evolução dos Gastos</h3>
+                <p>Volume acumulado de gastos por dia no mês ativo</p>
+              </div>
+            </div>
+            <div class="svg-chart-wrapper" id="chartDailyEvolutionWrapper">
+              <svg id="svgDailyEvolution" viewBox="0 0 600 240"></svg>
+              <div id="tooltipDaily" class="chart-tooltip"></div>
+            </div>
+          </div>
+
+          <!-- ÚLTIMAS MOVIMENTAÇÕES -->
+          <div class="section-header">
+            <h3 class="section-title">
+              <span>🕒</span> Últimas Movimentações
+            </h3>
+            <span class="section-link" data-view="view-transactions">Ver Histórico Completo →</span>
+          </div>
+
+          <div id="dashboardRecentTransactions" class="transactions-list">
+            <!-- Renderizado dinamicamente pelo JavaScript -->
+          </div>
+
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- VIEW 2: MEUS CARTÕES                                          -->
+        <!-- ============================================================== -->
+        <section id="view-cards" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Gerenciar Cartões & Contas</h2>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Configure seus limites, saldos iniciais e
+                cartões personalizados.</p>
+            </div>
+            <button id="btnOpenNewCardModal" class="btn-primary" style="display:flex; align-items:center; gap:6px;">
+              <span>+</span> Adicionar Cartão
+            </button>
+          </div>
+
+          <div id="cardsManagementGrid" class="cards-slider-container">
+            <!-- Renderizado dinamicamente pelo JavaScript -->
+          </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- VIEW 3: HISTÓRICO & MOVIMENTAÇÕES                             -->
+        <!-- ============================================================== -->
+        <section id="view-transactions" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Histórico de Movimentações</h2>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Filtre, pesquise e controle seus lançamentos.
+              </p>
+            </div>
+            <button id="btnHistoryNewTx" class="btn-primary" style="display:flex; align-items:center; gap:6px;">
+              <span>+</span> Novo Lançamento
+            </button>
+          </div>
+
+          <!-- Filtros e Busca -->
+          <div class="filter-bar">
+            <div class="search-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="text" id="inputSearchTransactions" placeholder="Buscar movimentação por nome ou nota..."
+                autocomplete="off">
+            </div>
+
+            <div class="quick-filter-chips">
+              <button class="filter-chip active" data-period="all">Todos</button>
+              <button class="filter-chip" data-period="today">Hoje</button>
+              <button class="filter-chip" data-period="week">Esta Semana</button>
+              <button class="filter-chip" data-period="month">Este Mês</button>
+            </div>
+
+            <div class="dropdown-filters-row">
+              <select id="filterSelectCard" class="filter-select">
+                <option value="all">Todos os Cartões</option>
+              </select>
+
+              <select id="filterSelectCategory" class="filter-select">
+                <option value="all">Todas Categorias</option>
+              </select>
+
+              <select id="filterSelectType" class="filter-select">
+                <option value="all">Todos os Tipos</option>
+                <option value="expense">Somente Gastos</option>
+                <option value="income">Somente Entradas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Lista de Transações Filtradas -->
+          <div id="fullTransactionsList" class="transactions-list">
+            <!-- Preenchido dinamicamente -->
+          </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- VIEW 4: RELATÓRIOS DO MÊS                                     -->
+        <!-- ============================================================== -->
+        <section id="view-reports" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Relatórios Financeiros</h2>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Análise detalhada por categoria, cartão e
+                comportamento de gastos.</p>
+            </div>
+          </div>
+
+          <!-- Destaques Analíticos -->
+          <div class="report-highlights-grid">
+            <div class="highlight-box">
+              <div class="highlight-icon-box"
+                style="color: var(--color-danger); background: var(--color-danger-light);">
+                🔥
+              </div>
+              <div class="highlight-info">
+                <span>Maior Gasto do Mês</span>
+                <strong id="repMaxExpenseValue">R$ 0,00</strong>
+                <small id="repMaxExpenseDesc">Nenhum gasto registrado</small>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon-box"
+                style="color: var(--color-warning); background: var(--color-warning-light);">
+                📅
+              </div>
+              <div class="highlight-info">
+                <span>Dia com Maior Gasto</span>
+                <strong id="repPeakDayDate">—</strong>
+                <small id="repPeakDayTotal">R$ 0,00 no dia</small>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon-box"
+                style="color: var(--color-primary); background: var(--color-primary-light);">
+                📊
+              </div>
+              <div class="highlight-info">
+                <span>Média Diária de Gastos</span>
+                <strong id="repDailyAverage">R$ 0,00</strong>
+                <small id="repDaysCount">calculado no mês</small>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon-box"
+                style="color: var(--color-success); background: var(--color-success-light);">
+                🎯
+              </div>
+              <div class="highlight-info">
+                <span>Taxa de Poupança</span>
+                <strong id="repSavingsRate">0%</strong>
+                <small id="repSavingsRateDesc">da renda líquida poupada</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gráficos Nativos em SVG -->
+          <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+
+            <!-- Gráfico 1: Gastos por Categoria (Donut) -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title-group">
+                  <h3>🍩 Gastos por Categoria</h3>
+                  <p>Distribuição percentual das despesas</p>
+                </div>
+              </div>
+              <div class="svg-chart-wrapper" id="chartCategoryWrapper">
+                <svg id="svgCategoryDonut" viewBox="0 0 360 300"></svg>
+                <div id="tooltipCategory" class="chart-tooltip"></div>
+              </div>
+              <div id="legendCategoryList" class="chart-legend"></div>
+            </div>
+
+            <!-- Gráfico 2: Gastos por Cartão (Barras Horizontais) -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title-group">
+                  <h3>💳 Gastos por Cartão / Conta</h3>
+                  <p>Comparação de gastos por banco no mês</p>
+                </div>
+              </div>
+              <div class="svg-chart-wrapper" id="chartCardsWrapper">
+                <svg id="svgCardsBar" viewBox="0 0 500 240"></svg>
+                <div id="tooltipCards" class="chart-tooltip"></div>
+              </div>
+              <div id="legendCardsList" class="chart-legend"></div>
+            </div>
+
+            <!-- Gráfico 3: Entradas vs Gastos (Colunas) -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title-group">
+                  <h3>⚖️ Entradas vs Gastos</h3>
+                  <p>Balanço consolidado do mês</p>
+                </div>
+              </div>
+              <div class="svg-chart-wrapper" id="chartIncomeVsExpenseWrapper">
+                <svg id="svgIncomeVsExpense" viewBox="0 0 400 240"></svg>
+                <div id="tooltipBalance" class="chart-tooltip"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- VIEW 5: CONFIGURAÇÕES                                         -->
+        <!-- ============================================================== -->
+        <section id="view-settings" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Configurações & Preferências</h2>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Defina limites iniciais, faça backups e
+                personalize o sistema.</p>
+            </div>
+          </div>
+
+          <!-- Card 1: Assistente de Limites Iniciais -->
+          <div class="settings-card">
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Configuração Rápida de Limites</h4>
+                <p>Informe os limites reais para Mercado Pago, Nubank, Caixa, Green Benefícios e C6 Bank de uma só vez.
+                </p>
+              </div>
+              <button id="btnOpenInitialSetupModal" class="btn-primary" style="font-size: 0.85rem; padding: 10px 16px;">
+                Configurar Limites
+              </button>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Bloquear Gastos Acima do Limite</h4>
+                <p>Impede lançamentos que ultrapassem o limite disponível do cartão selecionado.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="settingBlockOverlimit">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Modo Escuro (Dark Theme)</h4>
+                <p>Interface com cores elegantes e confortáveis para uso noturno.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="settingDarkMode">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 2: Backup e Restauração de Dados -->
+          <div class="settings-card">
+            <h3 style="font-size: 1.05rem; font-weight:700;">💾 Backup e Restauração Local</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Seus dados nunca saem do seu navegador. Você pode baixar um arquivo JSON de backup a qualquer momento e
+              restaurá-lo em qualquer dispositivo.
+            </p>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button id="btnExportData" class="btn-primary" style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Exportar Dados (JSON)</span>
+              </button>
+
+              <label class="btn-secondary" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                <span>Importar Dados (JSON)</span>
+                <input type="file" id="inputImportFile" accept=".json" style="display:none;">
+              </label>
+            </div>
+
+            <div class="settings-row" style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <div class="settings-row-info">
+                <h4 style="color: var(--color-danger);">Zerar Todos os Dados</h4>
+                <p>Apaga todos os lançamentos e restaura os cartões aos limites zerados.</p>
+              </div>
+              <button id="btnResetAllData" class="btn-danger" style="font-size:0.85rem; padding: 10px 16px;">
+                Limpar Tudo
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Sobre o Aplicativo & PWA -->
+          <div class="settings-card">
+            <h3 style="font-size: 1.05rem; font-weight:700;">📱 Aplicativo & PWA</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              myFinance versão 1.0.0 — Funciona 100% offline via Service Worker, sem servidores externos ou
+              rastreadores.
+            </p>
+            <div id="pwaStatusBox"
+              style="font-size: 0.85rem; color: var(--color-success); font-weight: 600; display:flex; align-items:center; gap:6px;">
+              <span>✓</span> Aplicativo pronto para uso offline e instalação PWA
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar">
+      <button class="bottom-nav-item active" data-view="view-dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>Início</span>
+      </button>
+
+      <button class="bottom-nav-item" data-view="view-cards">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="1" y="4" width="22" height="16" rx="3" />
+          <line x1="1" y1="10" x2="23" y2="10" />
+        </svg>
+        <span>Cartões</span>
+      </button>
+
+      <!-- Center Floating Plus Action -->
+      <div class="bottom-nav-item center-action-item">
+        <button id="btnFabAdd" class="btn-fab-center" title="Novo Lançamento" aria-label="Novo Lançamento">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+      </div>
+
+      <button class="bottom-nav-item" data-view="view-reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+        <span>Relatórios</span>
+      </button>
+
+      <button class="bottom-nav-item" data-view="view-settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+        <span>Ajustes</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 1: NOVO / EDITAR LANÇAMENTO (GASTO / ENTRADA)                  -->
+  <!-- ==================================================================== -->
+  <div id="modalTransaction" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTransactionTitle">Novo Lançamento</h3>
+        <button class="modal-close-btn" data-close-modal="modalTransaction">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Switch Tab: Gasto ou Entrada -->
+        <div class="modal-tabs">
+          <button id="tabTypeExpense" class="modal-tab-btn active tab-expense" type="button">
+            💸 Novo Gasto
+          </button>
+          <button id="tabTypeIncome" class="modal-tab-btn tab-income" type="button">
+            💰 Nova Entrada
+          </button>
+        </div>
+
+        <!-- Campo Grande de Valor com Máscara BRL -->
+        <div class="form-group">
+          <label class="form-label">Valor do Lançamento</label>
+          <div class="currency-input-wrapper">
+            <input type="text" id="txInputAmount" class="currency-input-large" placeholder="R$ 0,00" inputmode="numeric"
+              required>
+          </div>
+        </div>
+
+        <!-- Descrição -->
+        <div class="form-group">
+          <label class="form-label" for="txInputDesc">Descrição / Motivo</label>
+          <input type="text" id="txInputDesc" class="form-input" placeholder="Ex.: Supermercado Semanal, Salário..."
+            required>
+        </div>
+
+        <!-- Seletor Visual de Cartão / Conta -->
+        <div class="form-group">
+          <label class="form-label">Cartão / Conta Utilizado</label>
+          <div id="txCardSelectorList" class="card-selector-grid">
+            <!-- Cards selecionáveis renderizados via JS -->
+          </div>
+          <input type="hidden" id="txSelectedCardId">
+        </div>
+
+        <!-- Categoria -->
+        <div class="form-group">
+          <label class="form-label">Categoria</label>
+          <div id="txCategoryPicker" class="category-picker-grid">
+            <!-- Categorias renderizadas via JS -->
+          </div>
+          <input type="hidden" id="txSelectedCategory">
+        </div>
+
+        <!-- Data do Lançamento -->
+        <div class="form-group">
+          <label class="form-label" for="txInputDate">Data</label>
+          <input type="date" id="txInputDate" class="form-input" required>
+        </div>
+
+        <!-- Observação Opcional -->
+        <div class="form-group">
+          <label class="form-label" for="txInputNotes">Observações (Opcional)</label>
+          <textarea id="txInputNotes" class="form-input" rows="2"
+            placeholder="Detalhes adicionais, parcelas, etc..."></textarea>
+        </div>
+
+        <input type="hidden" id="txEditingId" value="">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" data-close-modal="modalTransaction" type="button">Cancelar</button>
+        <button id="btnSaveTransaction" class="btn-primary" type="button">Salvar Lançamento</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 2: NOVO / EDITAR CARTÃO                                        -->
+  <!-- ==================================================================== -->
+  <div id="modalCard" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalCardTitle">Adicionar Novo Cartão</h3>
+        <button class="modal-close-btn" data-close-modal="modalCard">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="cardInputName">Nome do Cartão / Banco</label>
+          <input type="text" id="cardInputName" class="form-input" placeholder="Ex.: Nubank Ultravioleta, Inter..."
+            required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cardInputType">Tipo da Conta / Cartão</label>
+          <select id="cardInputType" class="form-input">
+            <option value="credito">Cartão de Crédito</option>
+            <option value="debito">Cartão de Débito</option>
+            <option value="beneficio">Cartão Benefício / Vale</option>
+            <option value="conta">Conta Corrente / Saldo</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cardInputLimit">Limite Total</label>
+          <input type="text" id="cardInputLimit" class="form-input" placeholder="R$ 0,00" inputmode="numeric" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cardInputBalance">Saldo Inicial em Conta (Opcional)</label>
+          <input type="text" id="cardInputBalance" class="form-input" placeholder="R$ 0,00" inputmode="numeric">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Cor do Cartão</label>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="color" id="cardInputColor" value="#820AD1"
+              style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--border-color); cursor:pointer;">
+            <span style="font-size:0.85rem; color:var(--text-secondary);">Escolha uma cor para identificar
+              facilmente</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cardInputDigits">Últimos 4 Dígitos (Opcional)</label>
+          <input type="text" id="cardInputDigits" class="form-input" maxlength="4" placeholder="Ex.: 4589">
+        </div>
+
+        <div class="settings-row" style="padding: 6px 0;">
+          <div class="settings-row-info">
+            <h4 style="font-size:0.85rem;">Status do Cartão</h4>
+            <p style="font-size:0.75rem;">Cartões inativos não aparecem nos seletores de novos gastos</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="cardInputActive" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <input type="hidden" id="cardEditingId" value="">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" data-close-modal="modalCard" type="button">Cancelar</button>
+        <button id="btnSaveCard" class="btn-primary" type="button">Salvar Cartão</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 3: CONFIGURAÇÃO INICIAL EM LOTE (LIMITES REAIS)                -->
+  <!-- ==================================================================== -->
+  <div id="modalInitialSetup" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Configurar Limites dos Cartões</h3>
+        <button class="modal-close-btn" data-close-modal="modalInitialSetup">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">
+          Defina os limites reais para cada um dos seus cartões cadastrados. Você poderá alterá-los a qualquer momento.
+        </p>
+
+        <div id="batchCardLimitsContainer" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Preenchido via JS com os cartões cadastrados -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" data-close-modal="modalInitialSetup" type="button">Fechar</button>
+        <button id="btnSaveBatchLimits" class="btn-primary" type="button">Salvar Limites</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 4: CONFIRMAÇÃO DE EXCLUSÃO                                     -->
+  <!-- ==================================================================== -->
+  <div id="modalConfirm" class="modal-backdrop">
+    <div class="modal-content" style="max-width: 400px;">
+      <div class="modal-header">
+        <h3 id="confirmModalTitle">Confirmação</h3>
+        <button class="modal-close-btn" data-close-modal="modalConfirm">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="confirmModalMessage" style="font-size: 0.95rem; color: var(--text-primary);">
+          Tem certeza que deseja excluir este item?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-close-modal="modalConfirm" type="button">Cancelar</button>
+        <button id="btnConfirmDeleteAction" class="btn-danger" type="button">Sim, Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Toasts -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+
+</html>

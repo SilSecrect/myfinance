@@ -1,0 +1,33 @@
+{
+  "name": "myFinance - Controle Financeiro Pessoal",
+  "short_name": "myFinance",
+  "description": "Controle financeiro pessoal inteligente, cartões de crédito, receitas, despesas e relatórios em tempo real.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#2563EB",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"]
+}

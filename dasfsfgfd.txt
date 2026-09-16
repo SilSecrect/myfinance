@@ -1,0 +1,826 @@
+Quero criar um aplicativo completo de controle financeiro pessoal, moderno, responsivo e com excelente experiência de uso, utilizando somente HTML5, CSS3 e JavaScript puro (Vanilla JS).
+
+Não utilizar React, Vue, Angular, Bootstrap, Tailwind ou qualquer framework. O projeto deve funcionar diretamente no navegador e também poder ser instalado como PWA no Android, utilizando manifest.json e service-worker.js.
+
+1. Objetivo do aplicativo
+
+Quero controlar minhas finanças pessoais porque atualmente estou tendo alguns gastos acelerados.
+
+O aplicativo deve permitir cadastrar meus cartões/contas, registrar todos os meus gastos e acompanhar em tempo real quanto já utilizei, quanto ainda tenho disponível e quanto gastei durante o mês.
+
+Inicialmente, quero cadastrar:
+
+Mercado Pago
+Nubank
+Caixa
+Green Benefícios
+C6 Bank
+
+Porém, o sistema deve permitir adicionar novos cartões/contas posteriormente, sem precisar alterar o código.
+
+2. Conceito principal
+
+O aplicativo deve funcionar como um painel financeiro pessoal.
+
+Na tela inicial, quero visualizar rapidamente:
+
+Total disponível
+Total gasto no mês
+Total de economias
+Total de entradas/receitas
+Total utilizado nos cartões
+Limite disponível dos cartões
+Quantidade de lançamentos
+Resumo por cartão
+Evolução dos gastos durante o mês
+
+As informações devem ser atualizadas instantaneamente sempre que eu cadastrar, editar ou excluir uma movimentação.
+
+3. Cadastro dos cartões
+
+Criar uma área chamada "Meus cartões".
+
+Cada cartão deve possuir:
+
+Nome do cartão/banco
+Tipo: crédito, débito, benefício ou conta
+Limite disponível
+Limite total
+Saldo inicial
+Cor personalizada
+Ícone
+Últimos 4 dígitos opcionalmente
+Status: ativo/inativo
+
+Cartões iniciais:
+
+Mercado Pago
+Nubank
+Caixa
+Green Benefícios
+C6 Bank
+
+O usuário deve conseguir:
+
+Adicionar cartão
+Editar cartão
+Excluir cartão
+Alterar limite
+Alterar saldo
+Ativar/desativar cartão
+
+IMPORTANTE:
+
+Quando eu adicionar um novo cartão, ele deve aparecer automaticamente em todos os locais onde seja necessário selecionar um cartão.
+
+4. Cadastro de gastos
+
+Criar um botão grande e destacado:
+
++ Novo gasto
+
+Ao clicar, abrir um modal moderno.
+
+O modal deve permitir informar:
+
+Valor
+Descrição/motivo do gasto
+Cartão/conta utilizado
+Banco/cartão
+Categoria
+Data
+Observação opcional
+
+Exemplos de categorias:
+
+Alimentação
+Mercado
+Combustível
+Transporte
+Casa
+Lazer
+Saúde
+Educação
+Compras
+Assinaturas
+Contas
+Viagem
+Outros
+
+O campo de cartão deve ser um seletor visual mostrando os cartões cadastrados.
+
+Exemplo:
+
+[ Nubank ]
+[ Mercado Pago ]
+[ C6 Bank ]
+[ Caixa ]
+[ Green Benefícios ]
+
+5. Baixa em tempo real
+
+Quando eu registrar um gasto, o sistema deve imediatamente:
+
+Salvar a movimentação.
+Atualizar o valor gasto no cartão.
+Atualizar o limite/saldo disponível.
+Atualizar o total gasto no mês.
+Atualizar o dashboard.
+Atualizar os gráficos.
+Atualizar o histórico.
+Atualizar o relatório por cartão.
+
+Não quero precisar atualizar a página.
+
+Exemplo:
+
+Cartão Nubank:
+
+Limite: R$ 2.000,00
+
+Eu cadastro:
+
+"Mercado — R$ 250,00"
+
+O sistema imediatamente deve mostrar:
+
+Limite total: R$ 2.000,00
+Gasto: R$ 250,00
+Disponível: R$ 1.750,00
+
+6. Receitas e economias
+
+Além dos gastos, quero conseguir registrar entradas de dinheiro.
+
+Criar:
+
++ Nova entrada
+
+Campos:
+
+Valor
+Descrição
+Categoria
+Data
+Conta/cartão
+Observação
+
+Exemplos:
+
+Salário
+Freelance
+Pix recebido
+Reembolso
+Outros
+
+O aplicativo deve calcular automaticamente:
+
+Economia do mês = Total de entradas - Total de gastos
+
+Mostrar também:
+
+Economia acumulada
+Percentual da renda economizado
+Total recebido no mês
+Total gasto no mês
+7. Período mensal
+
+O sistema deve trabalhar com o período:
+
+Dia 01 até o último dia do mês
+
+Deve ser possível navegar entre:
+
+Mês atual
+Mês anterior
+Próximo mês
+
+Exemplo:
+
+SETEMBRO 2026
+
+Mostrar:
+
+01/09 → 30/09
+
+Os lançamentos devem ser agrupados por mês.
+
+IMPORTANTE:
+
+Não misturar gastos de meses diferentes.
+
+8. Dashboard
+
+Criar uma dashboard moderna.
+
+No topo:
+
+"Olá! 👋"
+
+"Veja como estão suas finanças hoje."
+
+Cards principais:
+
+Saldo disponível
+
+Mostrar valor disponível.
+
+Entradas
+
+Mostrar total recebido no mês.
+
+Gastos
+
+Mostrar total gasto no mês.
+
+Economia
+
+Mostrar quanto sobrou.
+
+Uso dos cartões
+
+Mostrar percentual do limite utilizado.
+
+9. Resumo dos cartões
+
+Criar cards individuais para cada cartão.
+
+Exemplo:
+
+NUBANK
+
+Limite
+R$ 3.000,00
+
+Utilizado
+R$ 1.240,50
+
+Disponível
+R$ 1.759,50
+
+Barra de progresso mostrando utilização.
+
+Usar cores leves:
+
+Verde para situação saudável
+Amarelo para atenção
+Vermelho quando o limite estiver próximo do fim
+
+Exemplo de regras:
+
+0–50% = verde
+51–75% = amarelo
+76–90% = laranja
+91–100% = vermelho
+
+10. Histórico de gastos
+
+Criar uma seção:
+
+Últimas movimentações
+
+Cada lançamento deve mostrar:
+
+Ícone da categoria
+Descrição
+Cartão utilizado
+Data
+Valor
+
+Exemplo:
+
+🛒 Mercado
+Nubank • 10/09/2026
+-R$ 180,00
+
+Também permitir:
+
+Editar lançamento
+Excluir lançamento
+Filtrar por cartão
+Filtrar por categoria
+Filtrar por período
+Pesquisar por descrição
+11. Relatório mensal
+
+Criar uma área:
+
+Relatório do mês
+
+Mostrar:
+
+Resumo geral
+
+Entradas: R$ X
+Gastos: R$ X
+Economia: R$ X
+
+Gastos por cartão
+
+Nubank — R$ X
+Mercado Pago — R$ X
+Caixa — R$ X
+Green Benefícios — R$ X
+C6 Bank — R$ X
+
+Gastos por categoria
+
+Alimentação — R$ X
+Mercado — R$ X
+Combustível — R$ X
+Lazer — R$ X
+Outros — R$ X
+
+Maior gasto do mês
+
+Mostrar automaticamente o maior lançamento.
+
+Dia que mais gastou
+
+Calcular automaticamente qual dia teve maior volume de gastos.
+
+12. Gráficos
+
+Utilizar JavaScript para criar gráficos.
+
+Se possível, utilizar SVG ou Canvas sem depender de frameworks externos.
+
+Criar:
+
+Gráfico de gastos por categoria
+Gráfico de gastos por cartão
+Gráfico de evolução dos gastos durante o mês
+Gráfico de entradas x gastos
+
+Os gráficos devem ser responsivos.
+
+13. Persistência dos dados
+
+Como o projeto será somente HTML, CSS e JavaScript, utilizar:
+
+localStorage ou IndexedDB
+
+para salvar os dados no dispositivo.
+
+Ao fechar e abrir o aplicativo, os dados devem continuar disponíveis.
+
+Não quero dados fictícios permanentes.
+
+O sistema deve começar com os cartões iniciais cadastrados, mas os valores precisam poder ser alterados pelo usuário.
+
+14. Dados reais
+
+Quero poder alimentar o aplicativo com valores reais.
+
+Por isso, criar uma área:
+
+Configuração inicial
+
+Onde eu possa informar:
+
+Limite do Mercado Pago
+Limite do Nubank
+Limite da Caixa
+Limite do Green Benefícios
+Limite do C6 Bank
+Saldo inicial
+Receitas previstas
+
+Esses valores devem ser salvos localmente.
+
+Também criar uma opção para:
+
+Exportar meus dados
+
+Gerar um arquivo JSON com todos os dados.
+
+E:
+
+Importar meus dados
+
+Permitir selecionar um arquivo JSON e restaurar os dados.
+
+15. Design
+
+Quero uma aparência extremamente moderna e profissional.
+
+Estilo:
+
+Clean
+Minimalista
+Premium
+Leve
+Moderna
+Mobile-first
+
+Utilizar bastante espaço em branco.
+
+Evitar excesso de cores.
+
+Paleta sugerida:
+
+Fundo: #F6F8FB
+Cards: branco
+Texto principal: #172033
+Texto secundário: #6B7280
+Verde: #22C55E
+Azul: #3B82F6
+Laranja: #F59E0B
+Vermelho: #EF4444
+
+Usar:
+
+Border-radius entre 12px e 20px
+Sombras muito suaves
+Transições
+Microinterações
+Botões modernos
+Ícones
+Barras de progresso
+Badges
+Skeleton/loading quando necessário
+16. Responsividade
+
+O aplicativo deve funcionar perfeitamente em:
+
+Android
+iPhone
+Tablet
+Notebook
+Desktop
+
+Prioridade:
+
+Mobile-first
+
+No celular, criar uma navegação inferior fixa:
+
+🏠 Início
+💳 Cartões
+➕ Novo
+📊 Relatórios
+⚙️ Configurações
+
+O botão "+" deve ficar destacado no centro.
+
+No desktop, transformar essa navegação em sidebar ou menu lateral.
+
+17. PWA
+
+O aplicativo precisa ser instalável no Android.
+
+Criar:
+
+manifest.json
+
+com:
+
+name
+short_name
+description
+start_url
+display: standalone
+background_color
+theme_color
+orientation
+icons
+
+Criar também:
+
+service-worker.js
+
+com cache dos arquivos principais.
+
+Estrutura sugerida:
+
+/
+├── index.html
+├── style.css
+├── app.js
+├── manifest.json
+├── service-worker.js
+└── icons/
+    ├── icon-192.png
+    └── icon-512.png
+
+
+No HTML, incluir:
+
+link para o manifest
+meta theme-color
+viewport
+registro do service worker
+18. Arquitetura JavaScript
+
+Organizar o JavaScript de maneira limpa.
+
+Separar responsabilidades em funções como:
+
+initApp()
+loadData()
+saveData()
+renderDashboard()
+renderCards()
+renderTransactions()
+renderReports()
+addCard()
+editCard()
+deleteCard()
+addTransaction()
+editTransaction()
+deleteTransaction()
+addIncome()
+calculateBalance()
+calculateMonthlyExpenses()
+calculateMonthlyIncome()
+calculateSavings()
+updateCharts()
+filterTransactions()
+exportData()
+importData()
+
+Evitar código duplicado.
+
+Usar objetos/arrays estruturados para armazenar:
+
+cards = []
+transactions = []
+incomes = []
+settings = {}
+
+19. Segurança e validações
+
+Adicionar validações para:
+
+Valor maior que zero
+Cartão obrigatório
+Descrição obrigatória
+Data válida
+Não permitir gastos maiores que o limite quando o cartão estiver configurado para bloquear esse comportamento
+
+Antes de excluir algo, mostrar confirmação.
+
+Exemplo:
+
+"Tem certeza que deseja excluir este lançamento?"
+
+20. Experiência do usuário
+
+Quero feedback visual para todas as ações.
+
+Ao cadastrar gasto:
+
+"✓ Gasto registrado com sucesso"
+
+Ao excluir:
+
+"✓ Lançamento removido"
+
+Ao adicionar cartão:
+
+"✓ Cartão adicionado"
+
+Utilizar Toast Notifications.
+
+Também adicionar animações suaves para abertura/fechamento de modais.
+
+21. Busca e filtros
+
+Criar filtros rápidos:
+
+Todos | Hoje | Semana | Mês
+
+E filtros por:
+
+Cartão
+Categoria
+Tipo
+Data
+
+Criar campo:
+
+🔎 "Buscar movimentação..."
+
+22. Configurações
+
+Criar página de configurações contendo:
+
+Gerenciar cartões
+Gerenciar categorias
+Configurar mês
+Exportar dados
+Importar dados
+Limpar todos os dados
+Tema claro/escuro
+Informações do aplicativo
+
+Se implementar modo escuro, manter uma aparência elegante e confortável.
+
+23. Dados iniciais
+
+Criar os 5 cartões abaixo automaticamente na primeira execução:
+
+[
+  {
+    name: "Mercado Pago",
+    type: "credito"
+  },
+  {
+    name: "Nubank",
+    type: "credito"
+  },
+  {
+    name: "Caixa",
+    type: "credito"
+  },
+  {
+    name: "Green Benefícios",
+    type: "beneficio"
+  },
+  {
+    name: "C6 Bank",
+    type: "credito"
+  }
+]
+
+
+Os limites devem começar como R$ 0,00, para que eu possa informar os valores reais depois.
+
+Não inventar valores financeiros.
+
+24. Importante sobre cálculos
+
+Os cálculos precisam considerar corretamente o mês selecionado.
+
+Exemplo:
+
+Se eu estiver visualizando setembro:
+
+Somar somente entradas de setembro.
+Somar somente gastos de setembro.
+Calcular economia de setembro.
+Mostrar gastos por cartão referentes a setembro.
+Mostrar gastos por categoria referentes a setembro.
+
+Ao mudar para agosto, recalcular tudo para agosto.
+
+25. Interface do modal de gasto
+
+O modal deve ser especialmente bem projetado no celular.
+
+Exemplo:
+
+NOVO GASTO
+
+Valor
+
+R$ 0,00
+
+Descrição
+
+"Ex.: supermercado"
+
+Cartão
+
+[ Nubank ▼ ]
+
+Categoria
+
+[ Alimentação ▼ ]
+
+Data
+
+[ 11/09/2026 ]
+
+Observação
+
+[ opcional ]
+
+[ Cancelar ] [ Salvar gasto ]
+
+O campo de valor deve aceitar facilmente valores brasileiros:
+
+R$ 1.250,50
+
+e converter corretamente para número internamente.
+
+26. Moeda
+
+Utilizar:
+
+Real brasileiro (BRL)
+
+Todos os valores devem aparecer no padrão brasileiro:
+
+R$ 1.250,50
+
+Datas:
+
+11/09/2026
+
+27. Tela inicial ideal
+
+Quero que a primeira tela fique aproximadamente assim:
+
+Olá! 👋
+
+Como estão suas finanças?
+
+[ R$ 4.280,00 ]
+Saldo disponível
+
+[ R$ 6.500,00 ]
+Entradas
+
+[ R$ 2.220,00 ]
+Gastos
+
+[ R$ 4.280,00 ]
+Economia
+
+MEUS CARTÕES
+
+💜 Nubank
+R$ 1.240 gastos
+Disponível R$ 1.760
+████████░░ 62%
+
+💙 Mercado Pago
+R$ 520 gastos
+Disponível R$ 1.480
+████░░░░░░ 35%
+
+🧡 C6 Bank
+R$ 320 gastos
+Disponível R$ 1.680
+██░░░░░░░░ 19%
+
+EVOLUÇÃO DOS GASTOS
+
+[ gráfico ]
+
+ÚLTIMAS MOVIMENTAÇÕES
+
+🛒 Supermercado
+Nubank
+-R$ 180,00
+
+⛽ Combustível
+C6 Bank
+-R$ 100,00
+
+🍔 Restaurante
+Mercado Pago
+-R$ 75,00
+
+[ + NOVO GASTO ]
+
+28. Código final
+
+Quero que você gere o projeto completo.
+
+Entregar separadamente:
+
+index.html
+style.css
+app.js
+manifest.json
+service-worker.js
+
+O código deve estar completo e funcional.
+
+Não entregar pseudocódigo.
+
+Não deixar funções importantes como:
+
+// implementar depois
+
+
+ou:
+
+// código aqui
+
+
+Todas as funcionalidades descritas devem estar implementadas.
+
+29. Regra importante
+
+O aplicativo deve funcionar sem backend e sem banco de dados externo.
+
+Todos os dados devem ficar no dispositivo utilizando localStorage ou IndexedDB.
+
+Não enviar dados financeiros para servidores externos.
+
+30. Resultado esperado
+
+Quero que o resultado pareça um aplicativo financeiro profissional, e não uma página HTML simples.
+
+A experiência deve ser semelhante à de um aplicativo mobile moderno.
+
+Priorizar:
+
+Usabilidade + visual premium + simplicidade + velocidade + responsividade + dados em tempo real + PWA.
+
+Antes de gerar o código, pense na arquitetura completa do sistema e garanta que as funcionalidades estejam integradas entre si.
+
+Depois, entregue todos os arquivos completos, prontos para copiar para uma pasta e executar.
